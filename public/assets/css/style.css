@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+    --primary-color: #1f62b3;
+    --secondary-color: #06264d;
+    --accent-colot: #C9D6E7;
+    --background-color: #82ADE0;
+    --light-color: #F7F7F8;
+    --font-family: "Montserrat";
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+
+body{
+   
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: rgb(2,0,36);
+    background: linear-gradient(310deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img{
+    width: 100%;
+}
+section{
+    padding: 120px;
+}
+
+.employee-img{
+    background-color: var(--primary-color);
+    padding: 24px;
+    width: 60%;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.employee-img img{
+    width: 450px;
+    border-radius: 16px;
+}
+
+.right-content {
+    position: relative; 
+    padding: 32px;
+    background: none; 
+}
+
+.right-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/assets/img/PNG-3-Big-Size.png') center/cover no-repeat;
+    opacity: 0.2; 
+    z-index: -1;
+}
+
+
+.employee-name{
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--light-color);
+    font-size: clamp(26px, 4vw, 56px);
+    line-height: 1;
+    font-family: var(--font-family), sans-serif;
+}
+
+.employee-position{
+   text-transform: capitalize;
+   color: var(--light-color);
+   font-size: clamp(16px, 3vw, 26px);
+   font-family: var(--font-family), sans-serif;
+}
+.employee-contact{
+    color: var(--light-color);
+    line-height: 1.6;
+    font-family: var(--font-family), sans-serif;
+}
+.employee-desc{
+    color: var(--light-color);
+    line-height: 1.6;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-family: var(--font-family), sans-serif;
+    
+}
+
+
+
+.social{
+ margin: 0px 16px 0px 0px;
+ background-color: var(--accent-colot);
+ padding: 8px;
+ border-radius: 50%;
+ cursor: grab;
+ transition: ease-in-out .2s;
+ font-family: var(--font-family), sans-serif;
+ box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.social i{
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.social:hover{
+    transform: scale(1.4);
+}
+
