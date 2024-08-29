@@ -8,14 +8,15 @@
             <div class="container d-flex">
                 <div class="left-content">
                     <div class="employee-img">
-                        <img src="/assets/img/infinitech-gio.jpg" alt="">
+                        <img src="/assets/img/infinitech-Sirgio.png" alt="">
                     </div>
                 </div>
                 <div class="right-content ">
                     <div class="employee-details mb-4">
-                        <h1 class="employee-name">giolo evora</h1>
-                        <h2 class="employee-position mb-4">senior web developer</h2>
-                        <p class="employee-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus error eius omnis facilis officia modi dolor atque quo eligendi accusamus blanditiis fugiat sapiente aspernatur est nisi, quasi voluptates veritatis pariatur?</p>
+                        <h1 class="employee-name">giolo Evora</h1>
+                        <h2 class="employee-position mb-4">Senior Web Developer</h2>
+                        <p class="employee-desc">
+                            A Senior Web Developer is responsible for designing, developing, and maintaining complex websites and web applications.</p>
                     </div>
 
                     <div class="employee-contact mb-xl-5">
@@ -26,11 +27,11 @@
                     </div>
 
                     <div class="employee-social mb-xl-5 d-flex">
-                        <div class="social facebook"><i class="fa-brands fa-facebook"></i></div>
-                        <div class="social twittter"><i class="fa-brands fa-twitter"></i></div>
-                        <div class="social instagram"><i class="fa-brands fa-instagram"></i></div>
-                        <div class="social telegram"><i class="fa-brands fa-telegram"></i></div>
-                        <div class="social viber"><i class="fa-brands fa-viber"></i></div>
+                        <div class="social facebook"  data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="custom-tooltip" data-bs-title="Facebook" ><i class="fa-brands fa-facebook"></i></div>
+                        <div class="social twittter" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="custom-tooltip" data-bs-title="Twitter" ><i class="fa-brands fa-twitter"></i></div>
+                        <div class="social instagram" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="custom-tooltip" data-bs-title="Instagram" ><i class="fa-brands fa-instagram"></i></div>
+                        <div class="social telegram" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="custom-tooltip" data-bs-title="Telegram" ><i class="fa-brands fa-telegram"></i></div>
+                        <div class="social viber" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="custom-tooltip" data-bs-title="Viber" ><i class="fa-brands fa-viber"></i></div>
                     </div>
                  
                 </div>
