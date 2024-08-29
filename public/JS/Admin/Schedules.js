@@ -191,13 +191,13 @@ function all() {
                     <div class="dropdown-menu dropdown-menu-end m-0">
                         <a href="javascript:;" class="dropdown-item edit_btn">Edit</a>
                         <a href="javascript:;" class="dropdown-item del_btn">Delete</a>
-                         <a href="javascript:;" class="dropdown-item qr_btn">Download QR</a>
+                        <a href="javascript:;" class="dropdown-item qr_btn">Download QR</a>
                     </div>
                 </div>
             `
             if (records.length > 0) {
                 for (var record of records) {
-                    var keys = ["id", "firstname", "lastname", "middlename", "position", "qrcode", "action"]
+                    var keys = ["employee_id", "firstname", "lastname", "middlename", "position", "qrcode", "action"]
                     var tr = $("<tr>").data("id", record.id)
 
                     for (var key of keys) {
@@ -297,7 +297,7 @@ function display_dashboard(res) {
 
 $(document).on("click", ".qr_btn", function () {
     var tr = $(this).closest('tr');
-    var td = tr.children()[4]; 
+    var td = tr.children()[5]; 
     
  
     var img = $(td).find('img'); 
