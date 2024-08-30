@@ -5,10 +5,23 @@ namespace App\Http\Controllers;
 use App\Models\employee as Employee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use JeroenDesloovere\VCard\VCard;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Symfony\Component\CssSelector\Node\FunctionNode;
 
 class MainController extends Controller
 {
+    public function viewEmployee($id)
+    {
+        $record = Employee::where('employee_id', $id)->first();
+
+        if ($record == null) {
+            return view('Page/PageNotFound');
+        } else {
+            return view('Home/index', compact('record'));
+        }
+    }
+
     public function all()
     {
         $records = employee::all();
@@ -37,21 +50,20 @@ class MainController extends Controller
         $record = new Employee();
         $qrcode = QrCode::format('png')
             ->size(512)
-            ->merge('/public/assets/img/PNG-3-Big-Size.png')
+            ->merge('/public/assets/img/qr-logo.jpg')
             ->errorCorrection('L')
             ->margin(1)
-            ->generate("http://127.0.0.1:8000/infinitech/" .$request['employee_id']
-        );
+            ->generate(
+                "http://127.0.0.1:8000/infinitech/" . $request['employee_id']
+            );
 
-        $keys = ['lastname','firstname', 'middlename', 'position','employee_id','facebook','telegram','wechat','viber', 'whatsapp','profile','qrcode'];
-
+        $keys = ['lastname', 'firstname', 'middlename', 'position', 'employee_id', 'facebook', 'telegram', 'wechat', 'viber', 'whatsapp', 'profile', 'qrcode'];
 
         foreach ($keys as $key) {
-            if ($key == 'qrcode') { 
-                $filename = $request['employee_id'] . '.png';
+            if ($key == 'qrcode') {
+                $filename = $request['firstname'] . '.png';
                 Storage::disk('public')->put('qrcodes/' . $filename, $qrcode);
                 $record->$key = $filename;
-
             } elseif ($key == 'wechat') {
                 if ($request->hasFile('wechat')) {
                     $file = $request->file('wechat');
@@ -101,15 +113,6 @@ class MainController extends Controller
         ]);
 
         $record = Employee::find($request->id);
-        $qrcode = QrCode::format('png')
-            ->size(512)
-            ->merge('/public/assets/img/PNG-3-Big-Size.png')
-            ->errorCorrection('L')
-            ->margin(1)
-            ->generate("http://127.0.0.1:8000/infinitech/" .$request['employeeID']
-        );
-
-
 
         $keys = [
             'lastname',
@@ -123,25 +126,10 @@ class MainController extends Controller
             'viber',
             'whatsapp',
             'profile',
-            'qrcode'
         ];
 
-        
-
         foreach ($keys as $key) {
-            if ($key == 'qrcode') {
-                $from = [255, 0, 0];
-                $to = [0, 0, 255];
-
-                $qr =  QrCode::size(200)
-                    ->style('dot')
-                    ->eye('circle')
-                    ->gradient($from[0], $from[1], $from[2], $to[0], $to[1], $to[2], 'diagonal')
-                    ->margin(1)
-                    ->generate($request['employee_id']);
-                $upd[$key] = $qr;
-
-            } elseif ($key == 'wechat') {
+            if ($key == 'wechat') {
                 if ($request->hasFile('wechat')) {
                     $file = $request->file('wechat');
                     $filename = time() . '_' . $file->getClientOriginalName();
@@ -160,6 +148,7 @@ class MainController extends Controller
                 $upd[$key] = $request->$key;
             }
         }
+
         $record->update($upd);
 
         return response(['msg' => "Updated $this->ent"]);
@@ -167,9 +156,62 @@ class MainController extends Controller
 
     public function del($id)
     {
-        $record = Employee::find($id)->delete();
+        $record = Employee::find($id);
+
+        $paths = [];
+        array_push($paths, public_path("wechat/" . $record->wechat));
+        array_push($paths, public_path("uploads/qrcodes/" . $record->qrcode));
+        array_push($paths, public_path("profiles/" . $record->profile));
+
+        foreach ($paths as $path) {
+            file_exists($path) ? unlink($path) : false;
+        }
+        $record->delete();
+
+
         return response(['msg' => "Deleted $this->ent"]);
     }
 
+    public function downloadVCard(Request $request)
+{
+    $id = $request->input('id'); // Use $request->input() for better practice
+    $user = Employee::where('employee_id', $id)->first();
+    
+    if (!$user) {
+        return response()->json(['error' => 'User not found.']);
+    }
 
+    // Create a new vCard
+    $vCard = new VCard();
+    $vCard->addName($user->firstname, $user->lastname);
+    $vCard->addEmail($user->email);
+    $vCard->addPhoneNumber($user->phone_number);
+    // Add more information as needed from the database
+    
+
+    $vCardDirectory = public_path('vcard');
+    
+
+    if (!file_exists($vCardDirectory)) {
+        mkdir($vCardDirectory, 0755, true);
+    }
+
+
+    $filename = $user->lastname . '-' . $user->firstname . '.vcf';
+    $filePath = $vCardDirectory . DIRECTORY_SEPARATOR . $filename; 
+
+
+    $vCard->setSavePath($vCardDirectory);
+    $vCard->save($filename);
+
+    if (!file_exists($filePath)) {
+        return response()->json(['error' => 'vCard not generated: ' . $filePath]);
+    }
+
+  
+    return response()->download($filePath);
+}
+
+    
+    
 }

@@ -6,7 +6,7 @@
                 document.write(new Date().getFullYear());
             </script>
 
-            <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">Dental Clinic</a>
+            <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">Infinitech Advertising Corporation</a>
         </div>
     </div>
 </footer>

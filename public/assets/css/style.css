@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-:root{
+
+:root {
     --primary-color: #1f62b3;
     --secondary-color: #06264d;
     --accent-colot: #C9D6E7;
@@ -8,54 +9,62 @@
     --font-family: "Montserrat";
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
+  
 }
 
 
 
-body{
-   
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background: rgb(2,0,36);
-    background: linear-gradient(310deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+body {
+ 
+    overflow-x: hidden;
+    /* background: rgb(2, 0, 36);
+    background: linear-gradient(310deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%); */
+    background: rgb(6,38,77);
+    background: linear-gradient(57deg, rgba(6,38,77,1) 24%, rgba(31,98,179,1) 95%);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+
+
 }
 
-img{
+img {
     width: 100%;
 }
-section{
-    padding: 120px;
-}
 
-/* .employee-img{
-    background-color: var(--primary-color);
-    padding: 24px;
-    width: 60%;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+section {
+    padding: 64px 0px;
+}
+/* .content{
+    position: relative;
+}
+.row{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 } */
 
-.employee-img img{
+
+.employee-img img {
     width: 450px;
     border-radius: 20px;
     border-color: whitesmoke;
     border-width: 100x;
 }
+
 .left-content img {
     border-radius: 16px;
     border: 2px solid #f9f9f9;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
+
 .right-content {
-    position: relative; 
-    padding: 32px;
-    background: none; 
+    position: relative;
+    /* padding: 32px; */
+    background: none;
 }
 
 .right-content::before {
@@ -66,12 +75,12 @@ section{
     right: 0;
     bottom: 0;
     background: url('/assets/img/PNG-3-Big-Size.png') center/cover no-repeat;
-    opacity: 0.2; 
+    opacity: 0.3;
     z-index: -1;
 }
 
 
-.employee-name{
+.employee-name {
     text-transform: uppercase;
     font-weight: bold;
     color: var(--light-color);
@@ -80,45 +89,65 @@ section{
     font-family: var(--font-family), sans-serif;
 }
 
-.employee-position{
-   text-transform: capitalize;
-   color: var(--light-color);
-   font-size: clamp(16px, 3vw, 26px);
-   font-family: var(--font-family), sans-serif;
+.employee-position {
+    text-transform: capitalize;
+    color: var(--light-color);
+    font-size: clamp(16px, 3vw, 26px);
+    font-family: var(--font-family), sans-serif;
 }
-.employee-contact{
+
+.employee-contact {
     color: var(--light-color);
     line-height: 1.6;
     font-family: var(--font-family), sans-serif;
 }
-.employee-desc{
+
+.employee-desc {
     color: var(--light-color);
     line-height: 1.6;
     text-transform: capitalize;
     font-weight: 400;
     font-family: var(--font-family), sans-serif;
-    
+
 }
 
 
 
-.social{
- margin: 0px 16px 0px 0px;
- background-color: var(--accent-colot);
- padding: 8px;
- border-radius: 50%;
- cursor: grab;
- transition: ease-in-out .2s;
- font-family: var(--font-family), sans-serif;
- box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+.social {
+    margin: 0px 16px 0px 0px;
+    background-color: var(--accent-colot);
+    padding: 8px;
+    border-radius: 50%;
+    cursor: grab;
+    transition: ease-in-out .2s;
+    font-family: var(--font-family), sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-.social i{
+.social i {
     font-size: 2rem;
     color: var(--secondary-color);
 }
 
-.social:hover{
+.social:hover {
     transform: scale(1.4);
 }
 
+.pagenotfound {
+    background-color: #D3D3D3;
+    height: 100vh;
+    padding: 0px;
+}
+
+.pagenotfound .title{
+    font-size: 64px;
+    font-weight: bold;
+    font-family: var(--font-family);
+    color: var(--secondary-color);
+}
+
+.pagenotfound .found-desc{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+}
