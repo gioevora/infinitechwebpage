@@ -189,6 +189,10 @@ class MainController extends Controller
 
     // Create a new vCard
     $vCard = new VCard();
+    $profilePath = public_path("profiles/" . $user->profile); 
+        if (file_exists($profilePath)) {
+            $vCard->addPhoto($profilePath);
+        }
     $vCard->addName($user->firstname, $user->lastname);
     $vCard->addEmail($user->email);
     $vCard->addPhoneNumber($user->phonenumber);
