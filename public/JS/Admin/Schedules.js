@@ -118,7 +118,7 @@ $(document).ready(function () {
             success: function (res) {
                 var record = res.record;
 
-                var keys = ["id", "lastname", "firstname", "middlename", "position", "employee_id",  "facebook", "telegram",  "viber", "whatsapp"];
+                var keys = ["id", "lastname", "firstname", "middlename", "position", "employee_id", "facebook", "telegram", "viber", "whatsapp"];
 
                 for (var key of keys) {
                     $(`.upd_form input[name=${key}], .upd_form select[name=${key}], .upd_form textarea[name=${key}]`).val(record[key],)
@@ -154,6 +154,9 @@ $(document).ready(function () {
             }
         })
     });
+
+
+
 })
 
 var ent = $(".ent").text().toLowerCase();
@@ -181,9 +184,9 @@ function all() {
             tbl.append(thead);
 
             var tbody = $("<tbody>");
-           
-            var action =    
-            `
+
+            var action =
+                `
                 <div class="d-inline-block text-nowrap">                
                     <button class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                         <i class="bx bx-dots-vertical-rounded"></i>
@@ -191,13 +194,13 @@ function all() {
                     <div class="dropdown-menu dropdown-menu-end m-0">
                         <a href="javascript:;" class="dropdown-item edit_btn">Edit</a>
                         <a href="javascript:;" class="dropdown-item del_btn">Delete</a>
-                         <a href="javascript:;" class="dropdown-item qr_btn">Download QR</a>
+                        <a href="javascript:;" class="dropdown-item qr_btn">Download QR</a>
                     </div>
                 </div>
             `
             if (records.length > 0) {
                 for (var record of records) {
-                    var keys = ["id", "firstname", "lastname", "middlename", "position", "qrcode", "action"]
+                    var keys = ["employee_id", "firstname", "lastname", "middlename", "position", "qrcode", "action"]
                     var tr = $("<tr>").data("id", record.id)
 
                     for (var key of keys) {
@@ -205,8 +208,8 @@ function all() {
                         if (key == "action") {
                             html = action
                         }
-                        else if(key == "qrcode"){
-                             html = `<img class="w-50" src='/uploads/qrcodes/${record[key]}'></img>`
+                        else if (key == "qrcode") {
+                            html = `<img class="w-50" src='/uploads/qrcodes/${record[key]}'></img>`
                         }
                         else {
                             html = record[key]
@@ -216,7 +219,7 @@ function all() {
                     }
                     tbody.append(tr);
                 }
-            } 
+            }
 
             tbl.append(tbody);
             $(".tbl_div").append(tbl);
@@ -224,8 +227,8 @@ function all() {
             var data_table = $('.records_tbl').DataTable({
                 responsive: true,
                 columnDefs: [
-                    {responsivePriority: 1, targets: -1},
-                    {responsivePriority: 1, targets: -2},
+                    { responsivePriority: 1, targets: -1 },
+                    { responsivePriority: 1, targets: -2 },
                 ],
                 inlineEditing: true,
                 buttons: [
@@ -237,18 +240,18 @@ function all() {
                 }
             })
 
-            $('.print_btn').on('click', function() {
+            $('.print_btn').on('click', function () {
                 data_table.button('.buttons-print').trigger();
             });
-            $('.copy_btn').on('click', function() {
+            $('.copy_btn').on('click', function () {
                 data_table.button('.buttons-copy').trigger();
             });
-    
-            $('.excel_btn').on('click', function() {
+
+            $('.excel_btn').on('click', function () {
                 data_table.button('.buttons-csv').trigger();
             });
-    
-            $('.pdf_btn').on('click', function() {
+
+            $('.pdf_btn').on('click', function () {
                 data_table.button('.buttons-pdf').trigger();
             });
         },
@@ -256,6 +259,8 @@ function all() {
             console.log(res);
         },
     });
+
+
 }
 
 // Dashboard
@@ -271,12 +276,12 @@ $(document).ready(function () {
         url: "/admin/dashboard-data/",
         method: 'GET',
         success: function (res) {
-           display_dashboard(res)
+            display_dashboard(res)
         },
         error: function (res) {
-            
+
         },
-    })    
+    })
 })
 
 function display_dashboard(res) {
@@ -295,19 +300,21 @@ function display_dashboard(res) {
 
 }
 
+
+
 $(document).on("click", ".qr_btn", function () {
     var tr = $(this).closest('tr');
-    var td = tr.children()[4]; 
-    
- 
-    var img = $(td).find('img'); 
+    var td = tr.children()[5];
+
+
+    var img = $(td).find('img');
 
     if (img.length > 0) {
         var qrCodeSrc = img.attr('src');
-    
+
         var a = document.createElement('a');
         a.href = qrCodeSrc;
-        a.download = 'qrcode.png'; 
+        a.download = 'qrcode.png';
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
@@ -315,6 +322,9 @@ $(document).on("click", ".qr_btn", function () {
         console.log("QR code image not found.");
     }
 });
+
+
+
 
 
 
