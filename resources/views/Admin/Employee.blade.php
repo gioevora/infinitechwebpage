@@ -52,8 +52,11 @@
                     </div>
 
                     <div class="modal-body">
-
+                         <!-- First Row -->
                         <div class="row mb-3">
+                            <div class="group-header">
+                                <h5 class="group-title">PERSONAL INFORMATION: </h5>
+                            </div>
                             <div class="col-4 mb-3">
                                 <label for="" class="form-label">Last name</label>
                                 <input type="text" class="form-control" placeholder="Enter Name" name="lastname" />
@@ -74,6 +77,9 @@
                                     <Option value="Admin">Admin</Option>
                                     <Option value="dmin Assistant">Admin Assistant</Option>
                                     <Option value="IT Supervisor">IT Supervisor</Option>
+                                    <Option value="Marketing Head">Marketing Head</Option>
+                                    <Option value="Human Resource">Human Resource</Option>
+                                    <Option value="Accounting Head">Accounting Head</Option>
                                     <Option value="Executive Assistant">Executive Assistant</Option>
                                 </select>
                             </div>
@@ -82,48 +88,73 @@
                                 <input type="text" class="form-control" placeholder="Enter Name" name="employee_id" />
                             </div>
                         </div>
-
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label for="" class="form-label">Facebook</label>
-                                <input type="text" class="form-control" placeholder="Enter Email Address"
-                                    name="facebook" />
+                        <hr>
+                         <!-- Second Row -->
+                         <div class="row mb-3">
+                            <div class="group-header">
+                                <h5 class="group-title">CONTACT DETAILS: </h5>
+                            </div>
+                            <div class="col-4 mb-3">
+                                <label for="" class="form-label">Phone Number</label>
+                                <input type="text" class="form-control" placeholder="Enter  Phone Number" name="phonenumber" />
+                            </div>
+                            <div class="col-4 mb-3">
+                                <label for="" class="form-label">Email</label>
+                                <input type="text" class="form-control" placeholder="Enter Email" name="email" />
                             </div>
                         </div>
+                        <hr>    
+                        <!-- Third Row -->
                         <div class="row mb-3">
-                            <div class="col">
-                                <label for="" class="form-label">Telegram</label>
-                                <input type="text" class="form-control" placeholder="Enter Phone Number"
-                                    name="telegram" />
+                            <div class="group-header">
+                                <h5 class="group-title">SOCIAL MEDIA ACCOUNT: </h5>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="" class="form-label">Facebook</label>
+                                    <input type="text" class="form-control" placeholder="Enter Email Address"
+                                        name="facebook" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="" class="form-label">Telegram</label>
+                                    <input type="text" class="form-control" placeholder="Enter Phone Number"
+                                        name="telegram" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="" class="form-label">Viber</label>
+                                    <input type="text" class="form-control" placeholder="Enter Phone Number"
+                                        name="viber" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="" class="form-label">Whatsapp</label>
+                                    <input type="text" class="form-control" placeholder="Enter Phone Number"
+                                        name="whatsapp" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="" class="form-label">Wechat</label>
+                                    <input type="file" name="wechat" class="form-control" id="">
+                                </div>
                             </div>
                         </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label for="" class="form-label">Wechat</label>
-                                <input type="file" name="wechat" class="form-control" id="">
+                        <hr>
+                         <!-- Fourth Row -->
+                         <div class="row mb-3">
+                            <div class="group-header">
+                                <h5 class="group-title">PROFILE: </h5>
                             </div>
-                        </div>
-                        <div class="row mb-3">
                             <div class="col">
-                                <label for="" class="form-label">Viber</label>
-                                <input type="text" class="form-control" placeholder="Enter Phone Number"
-                                    name="viber" />
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label for="" class="form-label">Whatsapp</label>
-                                <input type="text" class="form-control" placeholder="Enter Phone Number"
-                                    name="whatsapp" />
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label for="" class="form-label">Whatsapp</label>
+                                <label for="" class="form-label">Profile</label>
                                 <input type="file" name="profile" class="form-control" id="">
                             </div>
                         </div>
-
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary">Save</button>
@@ -145,82 +176,110 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-
-                        <input type="hidden" name="id" class="form-control">
-
+                        <!-- First Row -->
+                       <div class="row mb-3">
+                           <div class="group-header">
+                               <h5 class="group-title">PERSONAL INFORMATION: </h5>
+                           </div>
+                           <div class="col-4 mb-3">
+                               <label for="" class="form-label">Last name</label>
+                               <input type="text" class="form-control" placeholder="Enter Name" name="lastname" />
+                           </div>
+                           <div class="col-4 mb-3">
+                               <label for="" class="form-label">First name</label>
+                               <input type="text" class="form-control" placeholder="Enter Name" name="firstname" />
+                           </div>
+                           <div class="col-4 mb-3">
+                               <label for="" class="form-label">Middle name</label>
+                               <input type="text" class="form-control" placeholder="Enter Name" name="middlename" />
+                           </div>
+                           <div class="col-4 mb-3">
+                               <label for="" class="form-label">Position</label>
+                               <select name="position" class="form-control " id="">
+                                   <Option value="Senior Web Developer">Senior Web Developer</Option>
+                                   <Option value="Junior Web Developer">Junior Web Developer</Option>
+                                   <Option value="Admin">Admin</Option>
+                                   <Option value="dmin Assistant">Admin Assistant</Option>
+                                   <Option value="IT Supervisor">IT Supervisor</Option>
+                                   <Option value="Marketing Head">Marketing Head</Option>
+                                   <Option value="Human Resource">Human Resource</Option>
+                                   <Option value="Accounting Head">Accounting Head</Option>
+                                   <Option value="Executive Assistant">Executive Assistant</Option>
+                               </select>
+                           </div>
+                           <div class="col-4 mb-3">
+                               <label for="" class="form-label">Employee ID</label>
+                               <input type="text" class="form-control" placeholder="Enter Name" name="employee_id" />
+                           </div>
+                       </div>
+                       <hr>
+                        <!-- Second Row -->
                         <div class="row mb-3">
-                            <div class="col-4 mb-3">
-                                <label for="" class="form-label">Last name</label>
-                                <input type="text" class="form-control" placeholder="Enter Name" name="lastname" />
-                            </div>
-                            <div class="col-4 mb-3">
-                                <label for="" class="form-label">First name</label>
-                                <input type="text" class="form-control" placeholder="Enter Name" name="firstname" />
-                            </div>
-                            <div class="col-4 mb-3">
-                                <label for="" class="form-label">Middle name</label>
-                                <input type="text" class="form-control" placeholder="Enter Name" name="middlename" />
-                            </div>
-                            <div class="col-4 mb-3">
-                                <label for="" class="form-label">Position</label>
-                                <select name="position" class="form-control " id="">
-                                    <Option value="Senior Web Developer">Senior Web Developer</Option>
-                                    <Option value="Junior Web Developer">Junior Web Developer</Option>
-                                    <Option value="Admin">Admin</Option>
-                                    <Option value="dmin Assistant">Admin Assistant</Option>
-                                    <Option value="IT Supervisor">IT Supervisor</Option>
-                                    <Option value="Executive Assistant">Executive Assistant</Option>
-                                </select>
-                            </div>
-                            <div class="col-4 mb-3">
-                                <label for="" class="form-label">Employee ID</label>
-                                <input type="text" class="form-control" placeholder="Enter Name" name="employee_id" />
-                            </div>
-                        </div>
-
+                           <div class="group-header">
+                               <h5 class="group-title">CONTACT DETAILS: </h5>
+                           </div>
+                           <div class="col-4 mb-3">
+                               <label for="" class="form-label">Phone Number</label>
+                               <input type="text" class="form-control" placeholder="Enter  Phone Number" name="phonenumber" />
+                           </div>
+                           <div class="col-4 mb-3">
+                               <label for="" class="form-label">Email</label>
+                               <input type="text" class="form-control" placeholder="Enter Email" name="email" />
+                           </div>
+                       </div>
+                       <hr>    
+                       <!-- Third Row -->
+                       <div class="row mb-3">
+                           <div class="group-header">
+                               <h5 class="group-title">SOCIAL MEDIA ACCOUNT: </h5>
+                           </div>
+                           <div class="row mb-3">
+                               <div class="col">
+                                   <label for="" class="form-label">Facebook</label>
+                                   <input type="text" class="form-control" placeholder="Enter Email Address"
+                                       name="facebook" />
+                               </div>
+                           </div>
+                           <div class="row mb-3">
+                               <div class="col">
+                                   <label for="" class="form-label">Telegram</label>
+                                   <input type="text" class="form-control" placeholder="Enter Phone Number"
+                                       name="telegram" />
+                               </div>
+                           </div>
+                           <div class="row mb-3">
+                               <div class="col">
+                                   <label for="" class="form-label">Viber</label>
+                                   <input type="text" class="form-control" placeholder="Enter Phone Number"
+                                       name="viber" />
+                               </div>
+                           </div>
+                           <div class="row mb-3">
+                               <div class="col">
+                                   <label for="" class="form-label">Whatsapp</label>
+                                   <input type="text" class="form-control" placeholder="Enter Phone Number"
+                                       name="whatsapp" />
+                               </div>
+                           </div>
+                           <div class="row mb-3">
+                               <div class="col">
+                                   <label for="" class="form-label">Wechat</label>
+                                   <input type="file" name="wechat" class="form-control" id="">
+                               </div>
+                           </div>
+                       </div>
+                       <hr>
+                        <!-- Fourth Row -->
                         <div class="row mb-3">
-                            <div class="col">
-                                <label for="" class="form-label">Facebook</label>
-                                <input type="text" class="form-control" placeholder="Enter Email Address"
-                                    name="facebook" />
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label for="" class="form-label">Telegram</label>
-                                <input type="text" class="form-control" placeholder="Enter Phone Number"
-                                    name="telegram" />
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label for="" class="form-label">Wechat</label>
-                                <input type="file" name="wechat" class="form-control" id="">
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label for="" class="form-label">Viber</label>
-                                <input type="text" class="form-control" placeholder="Enter Phone Number"
-                                    name="viber" />
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label for="" class="form-label">Whatsapp</label>
-                                <input type="text" class="form-control" placeholder="Enter Phone Number"
-                                    name="whatsapp" />
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label for="" class="form-label">Profile Pic</label>
-                                <input type="file" name="profile" class="form-control" id="">
-                            </div>
-                        </div>
-
-                        
-                    </div>
+                           <div class="group-header">
+                               <h5 class="group-title">PROFILE: </h5>
+                           </div>
+                           <div class="col">
+                               <label for="" class="form-label">Profile</label>
+                               <input type="file" name="profile" class="form-control" id="">
+                           </div>
+                       </div>
+                   </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary">Update</button>
                         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>

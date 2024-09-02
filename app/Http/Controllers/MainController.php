@@ -39,6 +39,8 @@ class MainController extends Controller
             'middlename' => 'required',
             'position' => 'required',
             'employee_id' => 'required',
+            'phonenumber' => 'required',
+            'email' => 'required',
             'facebook' => 'required',
             'telegram' => 'required',
             'wechat' => 'required|file|mimes:jpg,png,jpeg|max:2048',
@@ -57,7 +59,7 @@ class MainController extends Controller
                 "http://127.0.0.1:8000/infinitech/" . $request['employee_id']
             );
 
-        $keys = ['lastname', 'firstname', 'middlename', 'position', 'employee_id', 'facebook', 'telegram', 'wechat', 'viber', 'whatsapp', 'profile', 'qrcode'];
+        $keys = ['lastname', 'firstname', 'middlename', 'position', 'employee_id', 'phonenumber','email','facebook', 'telegram', 'wechat', 'viber', 'whatsapp', 'profile', 'qrcode'];
 
         foreach ($keys as $key) {
             if ($key == 'qrcode') {
@@ -106,6 +108,8 @@ class MainController extends Controller
             'middlename' => 'required',
             'position' => 'required',
             'employee_id' => 'required',
+            'phonenumber' => 'required',
+            'email' => 'required',
             'facebook' => 'required',
             'telegram' => 'required',
             'viber' => 'required',
@@ -120,6 +124,8 @@ class MainController extends Controller
             'middlename',
             'position',
             'employee_id',
+            'phonenumber',
+            'email',
             'facebook',
             'telegram',
             'wechat',
@@ -185,9 +191,12 @@ class MainController extends Controller
     $vCard = new VCard();
     $vCard->addName($user->firstname, $user->lastname);
     $vCard->addEmail($user->email);
-    $vCard->addPhoneNumber($user->phone_number);
-    // Add more information as needed from the database
-    
+    $vCard->addPhoneNumber($user->phonenumber);
+    $vCard->addJobtitle("Infinitech - ". $user->position);
+    $vCard->addAddress($name = '', $extended = 'Unit 311, Campos Rueda Bldg.', $street = 'Urban Ave.', $city ='Makati City', $region='NCR', $zip='5200', $country='Philippines', $type='WORK');
+    $vCard->addURL("https://infinitechphil.com/");
+    $vCard->addCompany('Infinitech Advertising Corporation');
+
 
     $vCardDirectory = public_path('vcard');
     

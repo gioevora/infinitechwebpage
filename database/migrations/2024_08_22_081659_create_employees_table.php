@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('middlename');
             $table->string('position');
             $table->string('employee_id');
+            $table->string('phonenumber');
+            $table->string('email');
             $table->string('facebook');
             $table->string('telegram');
             $table->string('wechat');

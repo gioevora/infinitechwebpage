@@ -1,8 +1,13 @@
 BEGIN:VCARD
 VERSION:3.0
-REV:2024-08-30T08:11:47Z
-N;CHARSET=utf-8:Kimberly;Nineria;;;
-FN;CHARSET=utf-8:Nineria Kimberly
-EMAIL;INTERNET:
-TEL:
+REV:2024-09-02T05:30:41Z
+N;CHARSET=utf-8:KIMBERLY;NINERIA;;;
+FN;CHARSET=utf-8:NINERIA KIMBERLY
+EMAIL;INTERNET:infinitech.kimberly@gmail.com
+TEL:09994274253
+TITLE;CHARSET=utf-8:Infinitech - Junior Web Developer
+ADR;WORK;CHARSET=utf-8:;Unit 311, Campos Rueda Bldg.;Urban Ave.;Makati City
+ ;NCR;5200;Philippines
+URL:https://infinitechphil.com/
+ORG;CHARSET=utf-8:Infinitech Advertising Corporation
 END:VCARD

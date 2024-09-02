@@ -15,6 +15,8 @@ class employee extends Model
        'middlename',
        'position',
        'employee_id',
+       'phonenumber',
+       'email',
        'facebook',
        'telegram',
        'wechat',
